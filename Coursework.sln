@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework.Web", "Coursework.Web\Coursework.Web.csproj", "{BE65787F-5164-413F-80A4-2ECF6DEC9171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework.BLL", "Coursework.BLL\Coursework.BLL.csproj", "{28BC43FD-F91A-41EB-8399-11CC6D5ADF5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework.DAL", "Coursework.DAL\Coursework.DAL.csproj", "{EFAEB015-10B0-4293-801D-473FC6A9EC37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework.Entity", "Coursework.Entity\Coursework.Entity.csproj", "{635723EE-F143-4121-A71A-B84B569C35A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE65787F-5164-413F-80A4-2ECF6DEC9171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE65787F-5164-413F-80A4-2ECF6DEC9171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE65787F-5164-413F-80A4-2ECF6DEC9171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE65787F-5164-413F-80A4-2ECF6DEC9171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28BC43FD-F91A-41EB-8399-11CC6D5ADF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BC43FD-F91A-41EB-8399-11CC6D5ADF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BC43FD-F91A-41EB-8399-11CC6D5ADF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BC43FD-F91A-41EB-8399-11CC6D5ADF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAEB015-10B0-4293-801D-473FC6A9EC37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAEB015-10B0-4293-801D-473FC6A9EC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAEB015-10B0-4293-801D-473FC6A9EC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAEB015-10B0-4293-801D-473FC6A9EC37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635723EE-F143-4121-A71A-B84B569C35A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635723EE-F143-4121-A71A-B84B569C35A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635723EE-F143-4121-A71A-B84B569C35A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635723EE-F143-4121-A71A-B84B569C35A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

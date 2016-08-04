@@ -1,0 +1,25 @@
+﻿@model Coursework.Web.Models.FlowerViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm("Delete", "Flower", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    <br>
+    <h2>Are You sure You want to delete @Html.DisplayFor(model => model.FlowerName)</h2>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-6">
+            <input type="submit" value="Delete" class="btn btn-default btn-block btn-danger"/>
+        </div>
+    </div>
+    <div class="form-group">
+            <div class="col-md-offset-3 col-md-6">
+                <button type="button" class="btn btn-default col-md-12" onclick="location.href='@Request.UrlReferrer'">Cancel</button>
+            </div>
+    </div>
+}

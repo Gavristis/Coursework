@@ -1,0 +1,44 @@
+﻿@model Coursework.Web.Models.UserViewModel
+
+@{
+    ViewBag.Title = "User info";
+}
+<h2>User info</h2>
+<h1>My profile</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading ">User info</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item"> <h4>Name</h4> @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</li>
+                    <li class="list-group-item"> <h4>@Html.DisplayNameFor(model => model.Email)</h4> @Html.DisplayFor(model => model.Email)</li>
+                    <li class="list-group-item"> <h4>Flowers available</h4> @Html.DisplayFor(model => model.Purchased)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading ">Flowers</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @foreach (var e in Model.Flowers)
+                    {
+                        if (Model.Id == e.UserId)
+                        {
+                            <a href="@Url.Action("GetFlower", new { Controller = "Flower", id = e.FlowerId})" class="list-group-item"><h4> @e.FlowerName</h4> </a>
+                        }
+                    }
+                    @if (Model.Purchased != 0)
+                    {
+                        <a href="@Url.Action("Create", new { Controller = "Flower"})" class="list-group-item list-group-item-success"><h4>Create a new flower</h4></a>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+</p>

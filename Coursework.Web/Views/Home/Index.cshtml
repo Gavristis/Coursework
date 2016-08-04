@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="row" align="justify">
+    <h1>What is Flowerade?</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-5">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Flowerade is a simple service that helps you to check the status of your plants in a very convenient and efficient way.</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Add your favourite flowers, share photos of them and rate others. With our service they will always be looked after! </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+            <a href=@Url.Action("Register", new { Controller = "Account"}) class="btn btn-primary col-md-12" role="button">Create a new account</a>
+        </div>
+        <div class="col-md-3">
+            <a href=@Url.Action("Login", new { Controller = "Account"}) class="btn btn-default col-md-12" role="button">Sign in</a>
+        </div>
+    </div>
+</div>

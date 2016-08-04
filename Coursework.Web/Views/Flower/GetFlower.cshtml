@@ -1,0 +1,94 @@
+﻿@using Microsoft.Ajax.Utilities
+@model Coursework.Web.Models.FlowerViewModel
+@{
+    ViewBag.Title = "GetFlower";
+}
+
+<h2>GetFlower</h2>
+
+<h1>@Model.FlowerName <small>Owned by @Html.DisplayFor(model => model.User.FirstName) @Html.DisplayFor(model => model.User.LastName)</small>
+</h1>
+<div class="row">
+    <div class="form-group">
+        <div class="col-md-offset-0 col-md-5">
+            <br />
+            <a type="submit" value="Delete flower" class="btn btn-danger col-md-3" href=@Url.Action("Delete", new {Controller = "Flower", id = Model.FlowerId})> Delete flower </a>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div class="row" align="center">
+    <div class="col-md-offset-2 col-md-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading ">Flower status </div>
+            <div class="panel-body">
+                @if (Model.Picture != null)
+                {
+
+                            @Html.Raw("<img style='width:50%; height:50%;' src=\"data:image/jpeg;base64,"
+                                      + Convert.ToBase64String(Model.Picture.Image) + "\" />")
+
+                }
+                @if(Model.Picture == null)
+                {
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-offset-5">
+                            <br />
+                            <a type="submit" value="Add photo" class="btn btn-info col-md-3" href=@Url.Action("AddPhoto", new {Controller = "Flower", id = Model.FlowerId})> Add photo </a>
+                        </div>
+                    </div>
+                </div>
+                }
+                <ul class="list-group">
+                    <li class="list-group-item"> <h4>Flower name</h4> @Html.DisplayFor(model => model.FlowerName)</li>
+                    <li class="list-group-item"> <h4>Light</h4> @Html.DisplayFor(model => model.Light) (Lux)</li>
+                    <li class="list-group-item"> <h4>Moisture</h4> @Html.DisplayFor(model => model.Moisture) (%)</li>
+                    <li class="list-group-item"> <h4>Temperature</h4> @Html.DisplayFor(model => model.Temperature) (°C)</li>
+                    <li class="list-group-item"> <h4>Owner</h4><h4><a href="@Url.Action("GetUser", new {Controller = "User", id = Model.User.Id})"> @Html.DisplayFor(model => model.User.FirstName) @Html.DisplayFor(model => model.User.LastName)</a></h4></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <div class="col-md-offset-5">
+            <br />
+            <a type="submit" value="Leave comment" class="btn btn-info col-md-3" href=@Url.Action("Comment", new {Controller = "Flower", id = Model.FlowerId})> Leave comment </a>
+        </div>
+    </div>
+</div>
+<br/>
+
+
+@foreach (var c in Model.Comments)
+{
+    if (Model.User == c.User)
+    {
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                <div class="panel panel-success">
+                    <div class="panel-heading "><b> From </b> @c.User.FirstName @c.User.LastName (Owner)  <small> At @c.Time.ToString() </small></div>
+                    <div class="panel-body">
+                        <h4>Commented:</h4>@c.Text
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading "><b> From </b> @c.User.FirstName @c.User.LastName  <small> At @c.Time.ToString() </small></div>
+                    <div class="panel-body">
+                        <h4>Commented:</h4>@c.Text
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
